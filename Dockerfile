@@ -11,10 +11,8 @@ ADD rcouch.sh /etc/service/rcouch/run
 RUN chmod 755 /etc/service/rcouch/run
 
 RUN wget https://github.com/mikeblakeney/rcouch-build/raw/master/rcouch.tar.gz
-RUN file rcouch.tar.gz
 RUN tar -xf rcouch.tar.gz && rm rcouch*.tar.gz
 RUN mv rcouch /tmp
-
 
 RUN addgroup --gid 9999 rcouch
 RUN adduser --uid 9999 --gid 9999 --disabled-password --gecos "Application" rcouch
